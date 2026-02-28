@@ -1,0 +1,205 @@
+body {
+    font-family: "Segoe UI";
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    padding-left: 5px;
+    background: rgb(61, 72, 82);
+    margin: 0;
+    color: white;
+    padding: 20px 10px !important
+}
+
+
+.show {
+    display: block !important;
+}
+
+.mandatory {
+    color: red;
+}
+
+.blade {
+    width: 1000px;
+    border: 1px solid grey;
+}
+
+.tab-header {
+    padding: 10px;
+    background: rgb(237, 237, 237);
+    color: white;
+    color: rgb(61, 72, 82);
+}
+
+h3 {
+    color: rgb(94, 111, 126);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.mandatory-border {
+    border: 1px solid red;
+}
+
+h4 {
+    margin: 0;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    color: inherit;
+    font-size: 18px;
+}
+
+label {
+    color: rgb(61, 72, 82);
+    font-weight: 600;
+}
+
+.tab-body {
+    display: none;
+    padding: 10px;
+}
+
+.multi-wrapper {
+    position: relative;
+    width: 200px;
+}
+
+.multi-display {
+    border: 1px solid #ccc;
+    padding: 6px;
+    cursor: pointer;
+    background: white;
+}
+
+.multi-dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.multi-dropdown.show {
+    display: block;
+}
+
+.multi-dropdown label {
+    display: block;
+    padding: 4px;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+
+.multi-item {
+    padding: 6px;
+    cursor: pointer;
+}
+
+.multi-item:hover {
+    background: #eee;
+}
+
+.multi-item.selected {
+    background: #007bff;
+    color: white;
+}
+
+h1,
+.nav {
+    padding: 10px;
+    color: white;
+    background: rgb(61, 72, 82);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.fieldName {
+    width: 400px;
+    /* fixed label width */
+}
+
+.field input,
+.field select,
+.field .multi-wrapper {
+    flex: 1;
+    height: 25px;
+    /* take remaining space */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 570px;
+    height: 24px;
+    /* you can increase height if you want */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Slider background */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 12px;
+    /* half of height for rounded */
+}
+
+/* Knob */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    /* knob height */
+    width: 18px;
+    /* knob width */
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* When checked: change background */
+.switch input:checked+.slider {
+    background-color: #2196F3;
+}
+
+/* When checked: move knob fully right */
+.switch input:checked+.slider:before {
+    /* move knob by: (container width - knob width - 2*left offset) */
+    transform: translateX(calc(570px - 18px - 6px));
+    /* 6px = 2*3px left offset */
+}
+
+.field.hide {
+    display: none;
+    /* hides the entire container */
+}
